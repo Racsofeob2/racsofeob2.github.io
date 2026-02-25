@@ -1355,3 +1355,209 @@ pre, code {
   overflow: hidden;
 }
 
+/*     WIP      */
+
+.wip-banner {
+  background: #1a0d0d;
+  border: 1px solid #ff2d2d;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  border-radius: 6px;
+  color: #ff6b6b;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+/* ====================================== */
+/*   WIP GLITCH — CORRUPTED BINARY MODE  */
+/* ====================================== */
+
+.wip-glitch {
+  position: relative;
+  display: inline-block;
+  color: #ff2d2d;
+  animation:
+    glitch-subtle 2s infinite linear alternate,
+    glitch-burst 6s infinite;
+}
+
+/* --- Capas --- */
+.wip-glitch::before,
+.wip-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Capa roja intensa */
+.wip-glitch::before {
+  color: #ff0000;
+  z-index: -1;
+  animation:
+    layer-subtle 0.4s infinite steps(2, end),
+    burst-layer 6s infinite;
+}
+
+/* Capa rojo oscuro */
+.wip-glitch::after {
+  color: #8b0000;
+  z-index: -2;
+  animation:
+    layer-subtle 0.3s infinite steps(2, end),
+    burst-layer 6s infinite reverse;
+}
+
+/* ============================= */
+/*         WIP BADGE            */
+/* ============================= */
+
+.summary-wip-side {
+  min-width: 90px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  color: #ff2d2d;
+  border: 1px solid #ff2d2d;
+  background: rgba(255, 45, 45, 0.05);
+
+  text-transform: uppercase;
+
+  transition: all 0.2s ease;
+}
+
+/* Hover subtle glow */
+.summary-wip-side:hover {
+  background: rgba(255, 45, 45, 0.15);
+  box-shadow: 0 0 8px rgba(255, 45, 45, 0.6);
+}
+
+/* ================================= */
+/*        WIP GLITCH - FINAL        */
+/* ================================= */
+
+.wip-glitch {
+  position: relative;
+  display: inline-block;
+  color: #ff2d2d;
+  animation:
+    glitch-burst 7s steps(1, end) infinite;
+}
+
+/* -------- LAYERS -------- */
+
+.wip-glitch::before,
+.wip-glitch::after {
+  --top: 0;
+  --left: 0;
+  --v-height: 30%;
+
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+
+  transform: translateX(calc(var(--left) * 100%));
+
+  text-shadow:
+    calc(var(--left) * -2em) 0 .02em #ff0000,
+    calc(var(--left) * -4em) 0 .02em #8b0000;
+
+  clip-path: polygon(
+    0% calc(var(--top) * 10%),
+    100% calc(var(--top) * 10%),
+    100% calc(var(--top) * 10% + var(--v-height)),
+    0% calc(var(--top) * 10% + var(--v-height))
+  );
+}
+
+/* Layer A */
+.wip-glitch::before {
+  animation:
+    glitch-layer-a 0.9s infinite alternate-reverse,
+    glitch-split-top 7s steps(1, end) infinite;
+}
+
+/* Layer B */
+.wip-glitch::after {
+  animation:
+    glitch-layer-b 0.7s infinite alternate,
+    glitch-split-bottom 7s steps(1, end) infinite;
+}
+
+/* -------- CONSTANT DISTORTION -------- */
+
+@keyframes glitch-scale {
+  0%   { --scale: .9; }
+  20%  { --scale: 1.15; }
+  40%  { --scale: .85; }
+  60%  { --scale: 1.25; }
+  80%  { --scale: .9; }
+  100% { --scale: 1; }
+}
+
+@keyframes glitch-layer-a {
+  0%   { --left: .02; --v-height: 15%; --top: 2; }
+  25%  { --left: .06; --v-height: 35%; --top: 6; }
+  50%  { --left: .1;  --v-height: 20%; --top: 3; }
+  75%  { --left: .15; --v-height: 45%; --top: 7; }
+  100% { --left: .08; --v-height: 25%; --top: 4; }
+}
+
+@keyframes glitch-layer-b {
+  0%   { --left: -.03; --v-height: 20%; --top: 8; }
+  25%  { --left: -.08; --v-height: 40%; --top: 1; }
+  50%  { --left: -.15; --v-height: 15%; --top: 5; }
+  75%  { --left: -.2;  --v-height: 50%; --top: 2; }
+  100% { --left: -.1;  --v-height: 30%; --top: 6; }
+}
+
+/* -------- HARD SPLIT SPIKE -------- */
+
+@keyframes glitch-burst {
+  0%, 94%, 100% {
+    filter: none;
+  }
+
+  95% {
+    filter: contrast(1.8);
+  }
+
+  96% {
+    filter: none;
+  }
+}
+
+/* TOP HALF SPLIT */
+@keyframes glitch-split-top {
+
+  0%, 93%, 100% {
+    clip-path: inset(0 0 50% 0);
+    transform: translateY(0);
+  }
+
+  94%, 95%, 96% {
+    transform: translateY(-12px);
+  }
+}
+
+/* BOTTOM HALF SPLIT */
+@keyframes glitch-split-bottom {
+
+  0%, 93%, 100% {
+    clip-path: inset(50% 0 0 0);
+    transform: translateY(0);
+  }
+
+  94%, 95%, 96% {
+    transform: translateY(12px);
+  }
+}

@@ -1,6 +1,6 @@
 ---
 title: GTK
-date: 2026-02-25
+date: 2026-02-24
 language: C/C++
 platform: Windows
 difficulty: 1/5

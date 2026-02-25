@@ -11,6 +11,12 @@
   {{ end }}
 </div>
 
+{{ if .Params.wip }}
+  <div class="wip-banner">
+    🚧 WORK IN PROGRESS — This writeup is currently under development.
+  </div>
+{{ end }}
+
 <div class="content">
   {{ .Content }}
 </div>

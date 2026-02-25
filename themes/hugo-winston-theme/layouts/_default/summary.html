@@ -7,9 +7,24 @@
     <div class="summary-date">{{ dateFormat "Jan 2, 2006" .Date }}</div>
   {{ end }}
 
+<div class="summary-title-row">
+
   <h2 class="summary-title">
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-  </h2>
+  <a href="{{ .RelPermalink }}">
+    <span class="{{ if .Params.wip }}wip-glitch{{ end }}"
+          data-text="{{ .Title }}">
+      {{ .Title }}
+    </span>
+  </a>
+</h2>
+
+  {{ if .Params.wip }}
+    <div class="summary-wip-side">
+      WIP
+    </div>
+  {{ end }}
+
+</div>
 
   {{ if and (eq .Section "ctf") (ne .Parent.RelPermalink "/ctf/") }}
   <div class="summary-meta">
