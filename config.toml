@@ -1,8 +1,8 @@
-baseURL = "https://anonfaded.github.io/hugo-winston-cyber/"
-languageCode = "en-us"
+baseURL = "https://racsofeob2.github.io/"
+languageCode = "es-es"
 theme = "hugo-winston-theme"
 themesDir = "themes"
-title = "// F4dS3c Blog"
+title = "// 0xRac Blog"
 
 [pagination]
 pagerSize = 3
@@ -18,7 +18,7 @@ pygmentsUseClasses = true
  
 [params]
   google_analytics_id = ""
-  twitter_handle = "@anon_faded"
+
   showAuthorOnHomepage = true
   showAuthorOnPosts = false
   showIntroContentOnHomepage = true # the description below the title on home page
@@ -44,13 +44,10 @@ pygmentsUseClasses = true
   fontFamilyParagraph = "Ubuntu"
   fontFamilyMonospace = "Ubuntu Mono"
   showAboutPage = false  # Toggle to control About page visibility
-  github_username = "anonfaded"
-  kofi_username = "fadedx"
-  discord_invite = "kvAZvdkuuN"
-  email = "fadedhood@proton.me"
-  repo_name = "hugo-winston-cyber"  # for GitHub stars badge
-  footer_text = ":: F4dS3c Blog"  # Add this line for custom footer text
-  footer_year = "2024-2025"  # Static year for footer
+  github_username = "Racsofeob2"
+
+  footer_text = ":: 0xRac Blog"  # Add this line for custom footer text
+  footer_year = "2025-2026"  # Static year for footer
 
 # markdown config settings https://gohugo.io/getting-started/configuration-markup/#goldmark
 [markup]
@@ -72,12 +69,13 @@ pygmentsUseClasses = true
     weight = 2
     url = "/posts/"
   [[menu.main]]
+    name = "CTF"
+    identifier = "CTF"
+    weight = 3
+    url = "/CTF/"
+  [[menu.main]]
     name = "About"
     identifier = "about"
     weight = 3
     url = "/about/"
-  [[menu.main]]
-    name = "Tags"
-    identifier = "tags"
-    weight = 4
-    url = "/tags/"
+
