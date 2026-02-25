@@ -1328,16 +1328,16 @@ pre, code {
     }
   }
 
-  .summary-meta {
-  display: flex;
+  .summary .summary-meta {
+  display: flex !important;
   gap: 15px;
-  margin-top: 8px;
-  font-size: 0.85rem;
-  color: #aaa;
+  margin-top: 10px;
+  font-size: 0.9rem;
 }
 
-.summary-meta span {
+.summary .summary-meta span {
   background: #1a1a1a;
   padding: 4px 8px;
   border-radius: 4px;
+  color: #aaa;
 }
