@@ -1326,5 +1326,18 @@ pre, code {
     .post-title {
         font-size: 1.5rem !important;
     }
+  }
+
+  .summary-meta {
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #aaa;
 }
 
+.summary-meta span {
+  background: #1a1a1a;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
