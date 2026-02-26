@@ -7,7 +7,8 @@ difficulty: 1.7/5
 ---
 
 ## Overview
-Razkom_v1.1 is a Windows x86-64 binary designed to explot key validation by reversing the logic behind.
+
+Razkom_v1.1 is a Windows x86-64 binary designed to exploit key validation by reversing the logic behind.
 the objective is straightforward: analyze the program logic and build a keygen that generates valid keys.
 
 For this challenge, I will be using **IDA Free 9.2**
