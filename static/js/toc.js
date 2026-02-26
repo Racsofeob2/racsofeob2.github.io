@@ -17,8 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize TOC state based on screen size (changed breakpoint to include tablets)
     const mobileQuery = window.matchMedia('(max-width: 1024px)');
-    let isCollapsed = mobileQuery.matches;
-
+    let isCollapsed = true;
     // Create ToC container with initial state
     const tocContainer = document.createElement('div');
     tocContainer.className = 'toc-container';

@@ -17,7 +17,7 @@
   </div>
 {{ end }}
 
-<div class="content">
+<div class="content {{ if .Params.wip }}wip-blurred{{ end }}">
   {{ .Content }}
 </div>
 

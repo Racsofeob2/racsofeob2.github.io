@@ -44,7 +44,7 @@ The `jnz` instruction indicates that if the comparison fails, execution jumps to
 
 ## Decompilation & Logic Analysis
 
-To better understand the logic, we decompile the function using **F5** in IDA.
+To better understand the logic, we decompile the function using `F5` in IDA.
 
 {{< figure src="pseudocode1.png" title="Decompiled pseudocode view" >}}
 

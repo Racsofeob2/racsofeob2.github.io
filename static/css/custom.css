@@ -1561,3 +1561,46 @@ pre, code {
     transform: translateY(12px);
   }
 }
+
+/* ================================= */
+/*          WIP BLURRED MODE        */
+/* ================================= */
+
+.wip-blurred {
+  position: relative;
+}
+
+/* Blur del contenido */
+.wip-blurred p,
+.wip-blurred li,
+.wip-blurred pre,
+.wip-blurred code,
+.wip-blurred blockquote {
+  filter: blur(6px);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Evitar selección incluso arrastrando */
+.wip-blurred {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Mantener títulos visibles */
+.wip-blurred h1,
+.wip-blurred h2,
+.wip-blurred h3,
+.wip-blurred h4 {
+  filter: none;
+  user-select: text;
+  pointer-events: auto;
+}
+
+.wip-blurred figure {
+  filter: blur(8px);
+  pointer-events: none;
+  user-select: none;
+}
