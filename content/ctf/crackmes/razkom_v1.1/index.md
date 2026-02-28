@@ -18,11 +18,11 @@ For this challenge, I will be using **IDA Free 9.2**
 ## Initial Recon
 
 Running the binary prompts the user to enter a valid key in order to unlock the secret flag.
-{{< figure src="prompt1.png" title="Program prompt requesting key" >}}
+{{< figure src="images/prompt1.png" title="Program prompt requesting key" >}}
 
 This challenge comes with a hint about the key format.
 
-{{< figure src="key_hint.png" title="Key format hint" >}}
+{{< figure src="images/key_hint.png" title="Key format hint" >}}
 
 **???-???-???-???-???-???** 
 6 groups of 3 uppercase letters sepparated by a hyphen.
@@ -32,21 +32,21 @@ Now lets dig into the validation logic.
 ## Static Analysis
 We will search for the string that ask to enter the key, in IDA we can do it by pressing `ALT+t`.
 
-{{< figure src="text_search1.png" title="Searching 'Enter' string" >}}
+{{< figure src="images/text_search1.png" title="Searching 'Enter' string" >}}
 
 Once we find all the ocurrences we can look for the interesting ones in the list.
 
-{{< figure src="found1.png" title="Ocurrences list" >}}
+{{< figure src="images/found1.png" title="Ocurrences list" >}}
 
 Double click on the first one will get us to the Assembly code it references to, there we can chagne our view to graph flow by pressing `SPACE BAR`.
 
-{{< figure src="graph1.png" title="Graph view" >}}
+{{< figure src="images/graph1.png" title="Graph view" >}}
 
 ## Decompilation & Logic Analysis
 
 We can switch to text view again to decompile the assembly into Pseudocode by pressing `F5` so we have a much clean structure to look at.
 
-{{< figure src="pseudo1.png" title="Decompiled code" >}}
+{{< figure src="images/pseudo1.png" title="Decompiled code" >}}
 
 Good!! We can already see som checks the code performs.
 
@@ -382,7 +382,7 @@ The key has the correct format and passes all validation checks.
 
 Lets check if it will unlock the flag.
 
-{{< figure src="flag.png" title="Secret word shown" >}}
+{{< figure src="images/flag.png" title="Secret word shown" >}}
 
 Hooray!! we got it 
 

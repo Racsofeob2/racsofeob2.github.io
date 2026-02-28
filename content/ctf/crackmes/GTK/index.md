@@ -19,7 +19,7 @@ For this challenge, I will be using **IDA Free 9.2**.
 
 Running the binary prompts the user to enter a password in order to unlock the flag.
 
-{{< figure src="prompt1.png" title="Program prompt requesting password" >}}
+{{< figure src="images/prompt1.png" title="Program prompt requesting password" >}}
 
 A quick inspection confirms that this is a 64-bit Windows executable.
 
@@ -31,7 +31,7 @@ Since the binary is small and simple, we proceed directly to static analysis.
 
 The binary is loaded into IDA for inspection.
 
-{{< figure src="IDA_graph1.png" title="Control flow graph in IDA" >}}
+{{< figure src="images/IDA_graph1.png" title="Control flow graph in IDA" >}}
 
 From the control flow graph, we can observe:
 
@@ -46,7 +46,7 @@ The `jnz` instruction indicates that if the comparison fails, execution jumps to
 
 To better understand the logic, we decompile the function using `F5` in IDA.
 
-{{< figure src="pseudocode1.png" title="Decompiled pseudocode view" >}}
+{{< figure src="images/pseudocode1.png" title="Decompiled pseudocode view" >}}
 
 The pseudocode clearly shows the program comparing the user input against a hardcoded value.
 
@@ -58,7 +58,7 @@ Once we identify this value, we can simply provide it as input to satisfy the co
 
 After entering the correct value identified during analysis, the program reveals the flag:
 
-{{< figure src="Flag.png" title="Flag output after correct input" >}}
+{{< figure src="images/Flag.png" title="Flag output after correct input" >}}
 
 ---
 
