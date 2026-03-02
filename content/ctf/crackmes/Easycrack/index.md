@@ -36,7 +36,7 @@ Hmmm, that looks interesting lets list its cross references.
 
 Since there is only one cross reference lets follow that.
 
-{{< figure src="images/Hash2.png" title="Search string" >}}
+{{< figure src="images/Hash2.png" title="" >}}
 
 Lets list cross references to it again.
 
@@ -44,7 +44,7 @@ Lets list cross references to it again.
 
 Interesting, lets investigate the reference that says "initialization".
 
-{{< figure src="images/interesting.png" title="Search string" >}}
+{{< figure src="images/interesting.png" title="Initialization function" >}}
 
 Great!! It looks lik it is storing a hash into a variable, lets decompile this!
 
